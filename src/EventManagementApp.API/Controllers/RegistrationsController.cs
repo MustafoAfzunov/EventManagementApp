@@ -1,4 +1,5 @@
 using EventManagementApp.Application.DTOs.Registrations;
+using EventManagementApp.Application.DTOs.Seating;
 using EventManagementApp.Application.Interfaces.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
@@ -12,10 +13,14 @@ namespace EventManagementApp.API.Controllers;
 public class RegistrationsController : ControllerBase
 {
     private readonly IRegistrationService _registrationService;
+    private readonly ISeatingService _seatingService;
 
-    public RegistrationsController(IRegistrationService registrationService)
+    public RegistrationsController(
+        IRegistrationService registrationService,
+        ISeatingService seatingService)
     {
         _registrationService = registrationService;
+        _seatingService = seatingService;
     }
 
     [HttpPost]
@@ -34,5 +39,26 @@ public class RegistrationsController : ControllerBase
     {
         await _registrationService.CancelRegistrationAsync(id, cancellationToken);
         return NoContent();
+    }
+
+    [HttpPost("{id:guid}/seat/auto")]
+    public async Task<ActionResult<SeatAssignmentResultDto>> AutoAssignSeat(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        var result = await _seatingService.AutoAssignSeatAsync(id, cancellationToken);
+        return Ok(result);
+    }
+
+    [HttpPost("{id:guid}/seat/select")]
+    public async Task<ActionResult<SeatAssignmentResultDto>> SelectSeat(
+        Guid id,
+        [FromBody] SelectSeatRequest request,
+        [FromServices] IValidator<SelectSeatRequest> validator,
+        CancellationToken cancellationToken)
+    {
+        await validator.ValidateAndThrowAsync(request, cancellationToken);
+        var result = await _seatingService.SelectSeatAsync(id, request.SeatId, cancellationToken);
+        return Ok(result);
     }
 }

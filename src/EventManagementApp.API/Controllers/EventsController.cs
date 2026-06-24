@@ -1,4 +1,5 @@
 using EventManagementApp.Application.DTOs.Events;
+using EventManagementApp.Application.Interfaces.Repositories;
 using EventManagementApp.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,20 @@ namespace EventManagementApp.API.Controllers;
 public class EventsController : ControllerBase
 {
     private readonly IEventService _eventService;
+    private readonly ISeatingService _seatingService;
+    private readonly IRegistrationRepository _registrationRepository;
+    private readonly ICurrentUserService _currentUserService;
 
-    public EventsController(IEventService eventService)
+    public EventsController(
+        IEventService eventService,
+        ISeatingService seatingService,
+        IRegistrationRepository registrationRepository,
+        ICurrentUserService currentUserService)
     {
         _eventService = eventService;
+        _seatingService = seatingService;
+        _registrationRepository = registrationRepository;
+        _currentUserService = currentUserService;
     }
 
     [HttpGet]
@@ -56,5 +67,19 @@ public class EventsController : ControllerBase
     {
         var result = await _eventService.GetEventByIdAsync(id, cancellationToken);
         return Ok(result);
+    }
+
+    [HttpGet("{id:guid}/seats")]
+    public async Task<ActionResult> GetSeatMap(Guid id, CancellationToken cancellationToken)
+    {
+        Guid? registrationId = null;
+        if (_currentUserService.IsAuthenticated && _currentUserService.UserId is Guid userId)
+        {
+            var registration = await _registrationRepository.GetActiveByUserAndEventAsync(userId, id, cancellationToken);
+            registrationId = registration?.Id;
+        }
+
+        var seatMap = await _seatingService.GetEventSeatMapAsync(id, registrationId, cancellationToken);
+        return Ok(seatMap);
     }
 }

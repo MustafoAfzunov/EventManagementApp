@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection(SmtpSettings.SectionName));
 builder.Services.Configure<EmailVerificationSettings>(builder.Configuration.GetSection(EmailVerificationSettings.SectionName));
+builder.Services.Configure<SeatingSettings>(builder.Configuration.GetSection(SeatingSettings.SectionName));
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -21,7 +22,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "Event Management API",
         Version = "v1",
-        Description = "Phase 1 backend — Public Discovery, Authentication, Dashboard, Registration"
+        Description = "Phase 1–2 backend — Discovery, Auth, Registration, Seating & Ticketing"
     });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

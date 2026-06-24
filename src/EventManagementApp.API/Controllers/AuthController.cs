@@ -1,5 +1,6 @@
 using EventManagementApp.Application.DTOs.Auth;
 using EventManagementApp.Application.Interfaces.Services;
+using EventManagementApp.API.Helpers;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -73,6 +74,26 @@ public class AuthController : ControllerBase
         await validator.ValidateAndThrowAsync(request, cancellationToken);
         var response = await _authService.ForgotPasswordAsync(request, cancellationToken);
         return Ok(response);
+    }
+
+    [HttpGet("reset-password")]
+    [AllowAnonymous]
+    [Produces("text/html")]
+    public async Task<ContentResult> ResetPasswordPage(
+        [FromQuery] string? token,
+        CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(token))
+        {
+            return Content(PasswordResetPageRenderer.RenderInvalid("Missing reset token."), "text/html");
+        }
+
+        var isValid = await _authService.IsPasswordResetTokenValidAsync(token, cancellationToken);
+        var html = isValid
+            ? PasswordResetPageRenderer.RenderValid(token)
+            : PasswordResetPageRenderer.RenderInvalid("This password reset link is invalid or has expired.");
+
+        return Content(html, "text/html");
     }
 
     [HttpPost("reset-password")]

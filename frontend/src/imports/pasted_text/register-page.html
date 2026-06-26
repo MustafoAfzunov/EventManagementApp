@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | University of Central Asia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "inverse-surface": "#1f304f",
+                    "primary-fixed-dim": "#acc7ff",
+                    "surface-container-low": "#f1f3ff",
+                    "secondary-fixed-dim": "#a2c9ff",
+                    "outline": "#727784",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#003f87",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#131d24",
+                    "surface-bright": "#f9f9ff",
+                    "secondary": "#0060a8",
+                    "inverse-on-surface": "#edf0ff",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#003663",
+                    "primary-fixed": "#d7e2ff",
+                    "outline-variant": "#c2c6d4",
+                    "inverse-primary": "#acc7ff",
+                    "tertiary-fixed": "#dae4ee",
+                    "tertiary": "#39434b",
+                    "background": "#f9f9ff",
+                    "primary-container": "#0056b3",
+                    "tertiary-fixed-dim": "#bec8d2",
+                    "on-primary-fixed": "#001a40",
+                    "on-tertiary-container": "#c7d1dc",
+                    "on-surface-variant": "#424752",
+                    "on-secondary-fixed": "#001c38",
+                    "tertiary-container": "#505a63",
+                    "surface-dim": "#cadaff",
+                    "secondary-fixed": "#d3e4ff",
+                    "on-tertiary-fixed-variant": "#3e4851",
+                    "surface-container-high": "#e0e8ff",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#bbd0ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004491",
+                    "surface-container-highest": "#d7e2ff",
+                    "on-secondary-fixed-variant": "#004881",
+                    "secondary-container": "#47a1ff",
+                    "surface-variant": "#d7e2ff",
+                    "on-background": "#081b38",
+                    "surface-tint": "#115cb9",
+                    "on-surface": "#081b38",
+                    "surface-container": "#e8edff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            color: #081b38;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .input-focus-ring:focus {
+            border-color: #1E88E5;
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+            outline: none;
+        }
+
+        .auth-card-shadow {
+            box-shadow: 0 4px 12px rgba(26, 43, 73, 0.08);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .campus-overlay {
+            background: linear-gradient(to top, rgba(0, 63, 135, 0.9) 0%, rgba(0, 63, 135, 0.4) 50%, rgba(0, 63, 135, 0.1) 100%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<main class="min-h-screen flex flex-col md:flex-row">
+<!-- Left Side: Campus Visuals -->
+<section class="relative w-full md:w-1/2 lg:w-3/5 min-h-[300px] md:min-h-screen flex items-end p-lg md:p-3xl overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 h-full w-full" data-alt="A wide-angle cinematic shot of the University of Central Asia Naryn campus nestled against majestic mountain ranges. The architecture features modern sharp lines and stone textures under a clear blue sky. The lighting is golden hour, casting long, soft shadows and highlighting the prestigious, scholarly atmosphere. The scene is tranquil, professional, and captures the essence of a world-class educational facility in a rugged landscape." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvsu_en0oom4qfsDF79foGg-ariHduuVMSPrjn-MJouQIRGHe6vmT1VpEQJt99-vimWkQPatI9klfRt_CVFR_YmGVIKGuk023ew8g65T37Of-ymaALsKCk4MftQVn2TGfyadQVX3lsAdXAuWHxKWthVE72kRyvFpHga5BsVzSg1iVb9WmTTgnCNwFAxuLyrfl7tpCRVglwEPzVyK91ig8GbSk8Psx1S6dD_j2xgLmZIyRuixu2Zky_YubC_UwM-pNpCa8OZ44jdKNz')">
+</div>
+<!-- Branding Overlay -->
+<div class="absolute top-0 left-0 p-lg z-20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[24px]">school</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-white tracking-tight">University of Central Asia</span>
+</div>
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 z-10 campus-overlay"></div>
+<!-- Content -->
+<div class="relative z-20 max-w-xl text-on-primary">
+<h1 class="font-display-lg text-display-lg md:text-display-lg mb-4 leading-tight">
+                    Join the next generation of leaders
+                </h1>
+<p class="font-body-lg text-body-lg opacity-90 max-w-lg">
+                    Embark on a journey of academic excellence and cultural discovery in the heart of the Silk Road. Register your portal account today.
+                </p>
+<div class="mt-xl flex gap-md items-center">
+<div class="flex -space-x-2">
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female student of Central Asian descent, smiling warmly, studio lighting, clean background, modern professional portrait style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYiCDjmIy7dVSzlEfT6_jbLesBNB56Waye635UDlcZ8e6hzyAhcymO2GBK7LGYOpVs_XEqIljC-3SeD09t_ggNhuOaYdK5ljgKPW-UsTafNYs0XY7yQY6cbFYSRmg36W8dsOe8-5wUo9rup2BS67jL87cXyRIadba9jSHkxPXFvqcrVkbDd9TQvQxisK9NtvGC9_GWxC0_SHWWAaMmjA_luSK10X1MMl5YQEcz2wW0Mt3kn_sXa1TvuYr5f7GPyuWGTnPvZ9B5OVcq"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a male faculty member in professional attire, high-end commercial photography, soft lighting, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAWlVheY3gWXM9WhPHYoGvhDzKf7SNTzOAl6WTQaAT-H7r_8dpDSCQPYFZ8V1o-3VRrt_FIAkTrwLpqEMOIWBUIwDex87tJBXThJ5DpFpn94kbIjzeXamSKIj03gApP1jDgR20IkqPibjpZRIu7CreDIorcqx8tkw00QyzwYxcm25KzAxcNKuaQqqudXWIN_d_rw8GZx-fN8RXsaXsHt8fLtqIAjEqyC_b-W1nGrLKVy_HarK_rKgbmcw6x6ZpAz5sfXJ1N1lpGFyi"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male student wearing a blazer, confident expression, outdoor academic setting background blurred, natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJzMgrxAIXVcIRNtPhNuccy2qizfLFAvIFcgEkGRh4qc4D2LbfUiVkuSiPzXEDGURCGnZVjDO1ApFdAjWhS9LNx0IVCANz3DrC3haCCtnzbFDie9OSfs2QXGml0qRUfcWXT-CxPZBjImyMiMYMUMaCQ5_yLC_Xo_IlJf548lBDsSnfjyh4Aj4o7qqRp6f-O13g0E47JgJc5qQrqv8w2PDz5UosHtybZ8zkQepxtOi2RBFaQKdAa37XSINbUeJxLfPLnwfRG7iz9wyg"/>
+</div>
+</div>
+<p class="text-label-md font-label-md">Join 5,000+ students and alumni</p>
+</div>
+</div>
+</section>
+<!-- Right Side: Registration Form -->
+<section class="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center items-center p-lg md:p-xl bg-surface">
+<div class="w-full max-w-md">
+<!-- Form Header -->
+<div class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Create an account</h2>
+<p class="font-body-md text-on-surface-variant">Enter your university credentials to access the portal.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-lg" id="registrationForm">
+<!-- Full Name -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="fullName">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">person</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-focus-ring transition-all" id="fullName" name="fullName" placeholder="e.g. Alisher Navoi" required="" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="email">University Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">mail</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-focus-ring transition-all" id="email" name="email" placeholder="username@uca.edu.kg" required="" type="email"/>
+</div>
+<p class="text-[11px] text-outline mt-1 px-1">Must be a valid @uca.edu.kg address</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Student/Staff ID -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="ucaId">Student/Staff ID</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">badge</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-focus-ring transition-all" id="ucaId" name="ucaId" placeholder="UCA-XXXX" required="" type="text"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]">lock</span>
+</div>
+<input class="w-full pl-10 pr-10 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-focus-ring transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Terms checkbox -->
+<div class="flex items-start gap-3 mt-md">
+<input class="mt-1 w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="terms" name="terms" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a> regarding academic data.
+                        </label>
+</div>
+<!-- CTA -->
+<div class="pt-md">
+<button class="w-full bg-primary text-on-primary py-4 px-6 rounded-lg font-label-md text-headline-sm hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-sm" type="submit">
+                            Register
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Footer Links -->
+<div class="mt-xl pt-xl border-t border-outline-variant text-center">
+<p class="font-body-md text-on-surface-variant">
+                        Already have an account? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Login</a>
+</p>
+</div>
+<!-- Footer Small Print -->
+<div class="mt-2xl text-center space-y-md">
+<div class="flex justify-center gap-xl">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary" href="#">Help Center</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary" href="#">Campus Directory</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary" href="#">Contact Support</a>
+</div>
+<p class="font-label-sm text-label-sm text-outline opacity-60">
+                        © 2024 University of Central Asia. All rights reserved.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // Micro-interactions and Form Handling
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            // Loading state simulation
+            btn.disabled = true;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...`;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Success!`;
+                btn.classList.replace('bg-primary', 'bg-green-600');
+                
+                // Redirect logic would go here
+                console.log('Registration submitted');
+            }, 1500);
+        });
+
+        // Simple password toggle
+        const toggleBtn = document.querySelector('button[type="button"]');
+        const passInput = document.getElementById('password');
+        toggleBtn.addEventListener('click', () => {
+            const isPass = passInput.type === 'password';
+            passInput.type = isPass ? 'text' : 'password';
+            toggleBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">${isPass ? 'visibility_off' : 'visibility'}</span>`;
+        });
+    </script>
+</body></html>

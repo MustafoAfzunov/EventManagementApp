@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Details | University of Central Asia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e0e8ff",
+                        "secondary-fixed": "#d3e4ff",
+                        "on-primary-fixed-variant": "#004491",
+                        "on-secondary-fixed-variant": "#004881",
+                        "on-surface": "#081b38",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-highest": "#d7e2ff",
+                        "primary-container": "#0056b3",
+                        "surface-dim": "#cadaff",
+                        "inverse-on-surface": "#edf0ff",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#1f304f",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container": "#e8edff",
+                        "secondary": "#0060a8",
+                        "primary-fixed": "#d7e2ff",
+                        "on-tertiary-fixed": "#131d24",
+                        "surface-tint": "#115cb9",
+                        "on-primary-container": "#bbd0ff",
+                        "tertiary-container": "#505a63",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#a2c9ff",
+                        "primary": "#003f87",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#003663",
+                        "on-surface-variant": "#424752",
+                        "tertiary": "#39434b",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001a40",
+                        "tertiary-fixed": "#dae4ee",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#47a1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#081b38",
+                        "tertiary-fixed-dim": "#bec8d2",
+                        "on-tertiary-container": "#c7d1dc",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d7e2ff",
+                        "on-secondary-fixed": "#001c38",
+                        "outline": "#727784",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3e4851"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "container-max": "1280px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9ff; color: #081b38; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sticky-card { position: sticky; top: 100px; }
+        .mask-fade { mask-image: linear-gradient(to bottom, black 80%, transparent 100%); }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-on-background docked full-width top-0 z-50 border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer">University of Central Asia</span>
+<div class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="#">Explore Events</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Schedule</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="#">Venues</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md" href="#">Campus Life</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="px-md py-xs font-label-md text-label-md text-primary hover:bg-surface-container-high rounded transition-colors duration-200">Login</button>
+<button class="px-md py-xs font-label-md text-label-md bg-primary-container text-on-primary rounded shadow-sm hover:opacity-90 transition-all duration-200">Register</button>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-lg py-xl">
+<!-- Breadcrumb & Title -->
+<div class="mb-lg flex items-center gap-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Events</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Regional Sustainable Development Summit 2024</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-xl leading-tight">Regional Sustainable Development Summit 2024: Innovation in Mountainous Regions</h1>
+<!-- Banner Image Section -->
+<div class="relative w-full h-[480px] rounded-xl overflow-hidden mb-2xl shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A cinematic, wide-angle photograph of the University of Central Asia campus nestled in the dramatic, snow-capped mountains of Kyrgyzstan. The modern academic buildings feature glass and stone facades reflecting the clear blue sky. The lighting is golden hour, casting long, warm shadows across the manicured green lawns and pedestrian paths. The atmosphere is prestigious, serene, and academically inspiring, utilizing a professional palette of deep blues and mountain whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMX-aLawm4QE_WuXoQgxEOHkwhD1g57-tGdRH276mWetVq4dNwjv0nGGsFrgj8kd-IyxyZpp4HM5x4J3JLc7ANQ1En7DLZKBt-CUjje5DgNHk1z6vil8oZlTXkIET2c_m2pM7VRvJElhwhmcAcCSQAaTXOmcNBM0cEgJvniP8VlZohlKeSOsbqi4qQWEFmsiFx9xD630f95DIhYjhHkHemQNzPgaUTY0hyWVBEl5uxExcjEP8bjwQhPBFCqI2niZyYvcqkOOztgltC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-lg left-lg flex gap-md">
+<span class="px-md py-1 bg-white/90 backdrop-blur text-primary font-label-md text-label-md rounded-full border border-outline-variant">Sustainability</span>
+<span class="px-md py-1 bg-white/90 backdrop-blur text-primary font-label-md text-label-md rounded-full border border-outline-variant">International Relations</span>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-2xl relative">
+<!-- Left Column: Content -->
+<div class="flex-1 space-y-3xl">
+<!-- Description -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-lg flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+                        Event Overview
+                    </h2>
+<div class="space-y-md text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+<p>The 2024 Summit brings together global thought leaders, regional policy makers, and innovative researchers to discuss the unique challenges and opportunities for sustainable growth in Central Asia's mountainous territories.</p>
+<p>Focusing on three core pillars—Economic Resilience, Environmental Preservation, and Social Equity—this three-day event will feature collaborative workshops, keynote addresses from international experts, and high-level panel discussions designed to catalyze actionable change.</p>
+</div>
+</section>
+<!-- Full Schedule -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-lg flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+                        Event Schedule
+                    </h2>
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-white">
+<!-- Day 1 -->
+<div class="bg-surface-container-low px-lg py-md border-b border-outline-variant">
+<span class="font-label-md text-label-md text-primary uppercase">Day 1 • October 15</span>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-lg flex gap-xl hover:bg-surface-container-low transition-colors group">
+<div class="w-24 shrink-0 font-label-md text-label-md text-on-surface-variant">09:00 AM</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Opening Ceremony &amp; Keynote</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Prof. Sohail Khan - Grand Hall</p>
+</div>
+</div>
+<div class="p-lg flex gap-xl hover:bg-surface-container-low transition-colors group">
+<div class="w-24 shrink-0 font-label-md text-label-md text-on-surface-variant">11:30 AM</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Climate Resilience Workshop</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Interactive Session - Seminar Room B</p>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="bg-surface-container-low px-lg py-md border-y border-outline-variant">
+<span class="font-label-md text-label-md text-primary uppercase">Day 2 • October 16</span>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-lg flex gap-xl hover:bg-surface-container-low transition-colors group">
+<div class="w-24 shrink-0 font-label-md text-label-md text-on-surface-variant">10:00 AM</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Mountain Economics Panel</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Regional Leaders Discussion - Auditiorium 1</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Speakers Section -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-lg flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+                        Distinguished Speakers
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Speaker 1 -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl flex items-center gap-lg hover:shadow-lg transition-all duration-300">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a senior academic woman in her 50s, wearing a sharp charcoal blazer over a white blouse. She has a confident, warm expression. The background is a soft-focus library with leather-bound books. The lighting is soft and flattering, emphasizing a clean, high-authority academic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWQrE_dk1-MdD-3l-zteaOk12_qrmn2VFViwrwdBfyFPTbWYlukZUFKurnPEb45JbNiKkebTClMA6zpwK3CQRlEWWXXIBf2-RiaJxdeMzx-aziDm2qsJ2bW6wVOar3fCA5wLuUr5PfJscV6MVflIVdeQHwUZ1F6IlBDOaldRECXw1vowWAkoIfhef9r-q0sQmK4qUuOHYVhyOncVkdaDW19h-A_e6lk9U2Jri-MvtuopVF1aGLlK2shsTXfE7ZwmwU2qO3jeF1zoa"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Dr. Elena Volkov</h4>
+<p class="font-label-md text-label-md text-primary">Director of Environmental Research</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">UCA Naryn Campus</p>
+</div>
+</div>
+<!-- Speaker 2 -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl flex items-center gap-lg hover:shadow-lg transition-all duration-300">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male international diplomat with short graying hair, wearing a navy blue suit and a silk tie. He is smiling slightly in a modern glass-walled office overlooking a futuristic city skyline. The photo is crisp, bright, and maintains a high-end SaaS professional feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtpVfJd_prKl8ZIJbmRzVrPnQb2mbi7jMhYMLIvNf6CeSuV4V56WY9Q-bIK0eG90Q0_fBN2qZTznDzIz1Igx9PYEntlPfj0BtfuJQDAZbFrE1nXxarKm7Sfzef-iHmP6tiGkByHdpk2zBIcQIJBdqvjZtaITnwjz96ybILxFeXufmsTx8esPD5q8Syw7bVQaXUJuSVj-dYY5Xqwpekx2-TgMe6Rj_6Lqf_afccvFH6yKULqyUQX58I0HsnTy9ye2fzx-jTbrU16GhP"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Markus Thier</h4>
+<p class="font-label-md text-label-md text-primary">UN Regional Coordinator</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Central Asian Development Group</p>
+</div>
+</div>
+<!-- Speaker 3 -->
+<div class="p-lg bg-white border border-outline-variant rounded-xl flex items-center gap-lg hover:shadow-lg transition-all duration-300">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A vibrant headshot of a young female technology entrepreneur in a bright minimalist office. She is wearing a modern cream turtleneck and has a focused, innovative gaze. The lighting is bright and clean, reflecting a progressive and modern academic-professional crossover." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3wrWbxr5KdKCTgjsJfWDcspujZSR8vTaQ6V52PN7PotrGUl9QplN-W18baREEXI7hT8lVWkDl40B1t1e2CZQOHcrgEP-xDCH1_ATSDamc1rTzH_HHovcPgwhWuTtjK8mw-kPcUPRV3znl7phlZikKWpZpCRTt1Mn_q23rS-nlXYW1FJfqTM3r83t-kQEDsPtte-h7RlJsNmWpA-GLg4S_6NMiahyRhsZPmxit93o3LPmrkSZha7ma67oFLbR3Sio7P-0dFBsuxjI"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Amina Nazarbaev</h4>
+<p class="font-label-md text-label-md text-primary">Founder, AgriTech Central</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Innovation Lab Alumna</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Card -->
+<aside class="w-full lg:w-[400px] shrink-0">
+<div class="sticky-card bg-white border border-outline-variant rounded-xl shadow-sm overflow-hidden p-0">
+<div class="p-lg border-b border-outline-variant space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Registration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Open to all faculty and students</p>
+</div>
+<span class="px-md py-1 bg-emerald-100 text-emerald-800 font-label-sm text-label-sm rounded-full uppercase">Open</span>
+</div>
+<div class="space-y-md pt-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="event">event</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">October 15 - 17, 2024</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full Day Summit</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">UCA Khorog Campus</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Administrative Building, Grand Hall</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-error mt-1" data-icon="alarm">alarm</span>
+<div>
+<p class="font-label-md text-label-md text-error">Registration Deadline</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">October 10, 2024 (11:59 PM)</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-lg rounded-lg font-headline-sm text-headline-sm hover:opacity-90 active:scale-[0.98] transition-all duration-200 mt-md">Register Now</button>
+</div>
+<div class="p-lg bg-surface-container-low">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Venue Location</h4>
+<div class="w-full h-48 rounded-lg overflow-hidden border border-outline-variant relative group">
+<img class="w-full h-full object-cover" data-location="Khorog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMTTUAaFvULBa9-put8aoVxIOUyK0ZJO2j_zVoD845vg8gobnzsvNgvh555kKY4NuJ618KcTqiW14EXuA0cwO9LdXYIQBuRvaZ_5XkL7ZKyTYunYsG6SwWDxYwJlpVct0TwnqXbyYgvHiyMWSWekerZTv4NnCXr5hgfR2frHpWZNjN0373slXASaKKPOiresszj_aHq_3tbUHFyCwLwglAMLo89y4jo3g5FKHRuRk_CRyhm4dYM45eBhUE4LW49pw5iMVbUA1gECIj"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-on-surface/10 backdrop-blur-[2px]">
+<button class="px-md py-xs bg-white text-primary font-label-md text-label-md rounded shadow-md">Open in Maps</button>
+</div>
+</div>
+<p class="mt-md font-body-sm text-body-sm text-on-surface-variant text-center">Free shuttle service available from main student residences every 30 minutes.</p>
+</div>
+<div class="p-md text-center">
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">Download Event Brochure (PDF)</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows mt-3xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl max-w-container-max mx-auto w-full">
+<div class="flex flex-col items-center md:items-start gap-xs mb-lg md:mb-0">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">University of Central Asia</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 University of Central Asia. All rights reserved.</p>
+</div>
+<div class="flex gap-xl">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Campus Directory</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for schedule rows
+        document.querySelectorAll('.group').forEach(row => {
+            row.addEventListener('click', () => {
+                // Potential modal logic for session details
+                console.log('Session clicked');
+            });
+        });
+
+        // Sticky observer logic for smooth header transition if needed
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body></html>

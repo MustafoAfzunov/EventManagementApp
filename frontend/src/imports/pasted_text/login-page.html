@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | University of Central Asia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e0e8ff",
+                        "secondary-fixed": "#d3e4ff",
+                        "on-primary-fixed-variant": "#004491",
+                        "on-secondary-fixed-variant": "#004881",
+                        "on-surface": "#081b38",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-highest": "#d7e2ff",
+                        "primary-container": "#0056b3",
+                        "surface-dim": "#cadaff",
+                        "inverse-on-surface": "#edf0ff",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#1f304f",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container": "#e8edff",
+                        "secondary": "#0060a8",
+                        "primary-fixed": "#d7e2ff",
+                        "on-tertiary-fixed": "#131d24",
+                        "surface-tint": "#115cb9",
+                        "on-primary-container": "#bbd0ff",
+                        "tertiary-container": "#505a63",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#a2c9ff",
+                        "primary": "#003f87",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#003663",
+                        "on-surface-variant": "#424752",
+                        "tertiary": "#39434b",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001a40",
+                        "tertiary-fixed": "#dae4ee",
+                        "surface": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#47a1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#081b38",
+                        "tertiary-fixed-dim": "#bec8d2",
+                        "on-tertiary-container": "#c7d1dc",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d7e2ff",
+                        "on-secondary-fixed": "#001c38",
+                        "outline": "#727784",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3e4851"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "container-max": "1280px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .login-input:focus {
+            outline: none;
+            border-color: #1E88E5;
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+        }
+        .campus-gradient {
+            background: linear-gradient(to bottom, rgba(0, 63, 135, 0.4), rgba(0, 63, 135, 0.8));
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<main class="flex min-h-screen w-full">
+<!-- Left Side: Campus Imagery (60%) -->
+<section class="hidden lg:flex lg:w-[60%] relative overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="An expansive aerial view of the University of Central Asia campus nestled in a majestic mountain range. The architecture is modern yet rugged, blending local stone with large glass panels under a clear, crisp blue sky. The lighting is golden hour, casting long, warm shadows across the manicured grounds and central plaza. The overall mood is prestigious, tranquil, and academically rigorous, reflecting a world-class institutional environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8pWbBJc3x_Gg2wACdTE566Tpj3q_3x6crLJQU8Rdu-eJbQBvtZtm4ibSuOlbhetT8T_K9ZGO5wyA2BqWvCg8L1Enjz57TwoQrt0Bgd9K864YqfisfBZYhcLVfkXs8yWRd6ZieRQXVC4T7RxpK-UVmwEJMRaDS3odlOzK51ObMR8EQRcDwAnq2QDrCL_vI1FKbo7TX14MA9StHy2sGwXsfJfZfat5CTImG_qzIUiIkGJ4nDO5FoRXLfw8e32wRS01IE14bRHZw_8LK')">
+</div>
+<!-- Branding Overlay -->
+<div class="absolute inset-0 campus-gradient z-10 flex flex-col justify-between p-2xl">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="school">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-white tracking-tight">University of Central Asia</h1>
+</div>
+<div class="max-w-xl">
+<h2 class="font-display-lg text-display-lg text-white mb-md">Empowering the next generation of leaders.</h2>
+<p class="font-body-lg text-body-lg text-white/90 leading-relaxed">
+                        Access your academic portal to manage events, campus life, and your educational journey within our unique mountain-based campuses.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form (40%) -->
+<section class="w-full lg:w-[40%] bg-surface-container-lowest flex items-center justify-center p-lg md:p-3xl">
+<div class="w-full max-w-md">
+<!-- Mobile Logo (Visible only on small screens) -->
+<div class="lg:hidden flex flex-col items-center mb-xl">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-md shadow-md">
+<span class="material-symbols-outlined text-white text-[40px]" data-icon="school">school</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">University of Central Asia</h1>
+</div>
+<div class="mb-xl text-center lg:text-left">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-xs">University Login</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back. Please enter your credentials to continue.</p>
+</div>
+<form class="space-y-lg" onsubmit="return false;">
+<!-- Email/ID Input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email or Student ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="person">person</span>
+<input class="login-input w-full pl-12 pr-4 py-md bg-white border border-outline-variant rounded-lg font-body-md" id="email" name="email" placeholder="name@uca.edu.kg" type="text"/>
+</div>
+</div>
+<!-- Password Input -->
+<div>
+<div class="flex justify-between items-center mb-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-label-md text-label-md text-secondary hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="lock">lock</span>
+<input class="login-input w-full pl-12 pr-12 py-md bg-white border border-outline-variant rounded-lg font-body-md" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center space-x-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="remember">Remember me on this device</label>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-[#0056B3] text-white py-md rounded-lg font-label-md text-label-md font-bold shadow-sm hover:shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all duration-200" type="submit">
+                        Login to Portal
+                    </button>
+</form>
+<!-- Alternative Methods -->
+<div class="mt-2xl">
+<div class="relative flex items-center py-md">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-sm text-label-sm text-on-surface-variant">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<div class="grid grid-cols-2 gap-md mt-lg">
+<button class="flex items-center justify-center space-x-2 py-md px-4 border border-outline-variant rounded-lg bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="mail">mail</span>
+<span class="font-label-md text-label-md text-on-surface">Outlook</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-md px-4 border border-outline-variant rounded-lg bg-white hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="qr_code">qr_code</span>
+<span class="font-label-md text-label-md text-on-surface">QR Code</span>
+</button>
+</div>
+</div>
+<!-- Footer Links -->
+<footer class="mt-3xl pt-xl border-t border-outline-variant">
+<div class="flex flex-wrap justify-between gap-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 UCA Portal</p>
+<nav class="flex space-x-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Help Center</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+</div>
+</section>
+</main>
+<script>
+        // Simple Interaction logic for password visibility
+        const togglePass = document.querySelector('button[type="button"]');
+        const passInput = document.getElementById('password');
+        
+        if (togglePass && passInput) {
+            togglePass.addEventListener('click', () => {
+                const isPass = passInput.type === 'password';
+                passInput.type = isPass ? 'text' : 'password';
+                togglePass.querySelector('span').textContent = isPass ? 'visibility_off' : 'visibility';
+            });
+        }
+
+        // Add a subtle entrance animation for the form
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.w-full.max-w-md');
+            form.style.opacity = '0';
+            form.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                form.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                form.style.opacity = '1';
+                form.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body></html>

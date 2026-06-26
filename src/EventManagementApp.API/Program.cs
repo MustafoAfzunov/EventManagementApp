@@ -8,6 +8,31 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+const string FrontendCorsPolicy = "FrontendCorsPolicy";
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? [];
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(FrontendCorsPolicy, policy =>
+    {
+        if (allowedOrigins.Length > 0)
+        {
+            policy.WithOrigins(allowedOrigins)
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        }
+        else
+        {
+            // No origins configured (e.g. local dev) — allow any origin.
+            // Auth uses Bearer tokens, not cookies, so credentials are not required.
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        }
+    });
+});
+
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection(SmtpSettings.SectionName));
 builder.Services.Configure<EmailVerificationSettings>(builder.Configuration.GetSection(EmailVerificationSettings.SectionName));
 builder.Services.Configure<SeatingSettings>(builder.Configuration.GetSection(SeatingSettings.SectionName));
@@ -22,7 +47,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "Event Management API",
         Version = "v1",
-        Description = "Phase 1–2 backend — Discovery, Auth, Registration, Seating & Ticketing"
+        Description = "Backend API — Discovery, Auth, Registration, Seating, Ticketing, Check-In, Admin Management & Reporting"
     });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -62,6 +87,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(FrontendCorsPolicy);
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

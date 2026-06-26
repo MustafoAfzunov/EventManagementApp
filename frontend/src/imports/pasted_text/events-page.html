@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events - University of Central Asia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e0e8ff",
+                    "secondary-fixed": "#d3e4ff",
+                    "on-primary-fixed-variant": "#004491",
+                    "on-secondary-fixed-variant": "#004881",
+                    "on-surface": "#081b38",
+                    "inverse-primary": "#acc7ff",
+                    "surface-container-highest": "#d7e2ff",
+                    "primary-container": "#0056b3",
+                    "surface-dim": "#cadaff",
+                    "inverse-on-surface": "#edf0ff",
+                    "primary-fixed-dim": "#acc7ff",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#1f304f",
+                    "outline-variant": "#c2c6d4",
+                    "surface-container": "#e8edff",
+                    "secondary": "#0060a8",
+                    "primary-fixed": "#d7e2ff",
+                    "on-tertiary-fixed": "#131d24",
+                    "surface-tint": "#115cb9",
+                    "on-primary-container": "#bbd0ff",
+                    "tertiary-container": "#505a63",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#a2c9ff",
+                    "primary": "#003f87",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#003663",
+                    "on-surface-variant": "#424752",
+                    "tertiary": "#39434b",
+                    "surface-container-low": "#f1f3ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001a40",
+                    "tertiary-fixed": "#dae4ee",
+                    "surface": "#f9f9ff",
+                    "background": "#f9f9ff",
+                    "secondary-container": "#47a1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#081b38",
+                    "tertiary-fixed-dim": "#bec8d2",
+                    "on-tertiary-container": "#c7d1dc",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#d7e2ff",
+                    "on-secondary-fixed": "#001c38",
+                    "outline": "#727784",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#3e4851"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "3xl": "64px",
+                    "2xl": "48px",
+                    "container-max": "1280px",
+                    "xl": "32px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            color: #081b38;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .filter-shadow {
+            box-shadow: 0 4px 12px rgba(26, 43, 73, 0.08);
+        }
+        .event-card:hover {
+            box-shadow: 0 12px 32px rgba(26, 43, 73, 0.12);
+            transform: translateY(-2px);
+        }
+        .transition-all {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-on-background docked full-width top-0 z-50 border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">University of Central Asia</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 cursor-pointer active:opacity-80 transition-colors duration-200" href="#">Explore Events</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Schedule</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Venues</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Campus Life</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border border-outline-variant rounded-full px-lg py-xs w-64 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all text-body-sm" placeholder="Search events..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="px-md py-xs font-label-md text-primary hover:bg-surface-container-high rounded-lg transition-all">Login</button>
+<button class="px-lg py-xs font-label-md bg-primary text-on-primary rounded-lg shadow-sm hover:brightness-110 active:scale-95 transition-all">Register</button>
+</div>
+</div>
+</nav>
+<div class="max-w-container-max mx-auto px-lg py-2xl flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filter -->
+<aside class="w-full md:w-72 shrink-0 space-y-xl">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg sticky top-24">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Filters</h2>
+<button class="text-label-sm text-primary hover:underline">Clear all</button>
+</div>
+<!-- Date Filter -->
+<div class="mb-xl">
+<label class="block font-label-md text-on-surface mb-md">Date Range</label>
+<div class="space-y-sm">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary border-outline focus:ring-primary" name="date" type="radio"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Any Date</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline focus:ring-primary" name="date" type="radio"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Today</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline focus:ring-primary" name="date" type="radio"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">This Weekend</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline focus:ring-primary" name="date" type="radio"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">This Month</span>
+</label>
+</div>
+</div>
+<!-- Category Filter -->
+<div class="mb-xl">
+<label class="block font-label-md text-on-surface mb-md">Category</label>
+<div class="space-y-sm">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary border-outline rounded focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Academic</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Workshops</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary border-outline rounded focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Cultural</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Sports</span>
+</label>
+</div>
+</div>
+<!-- Venue Filter -->
+<div>
+<label class="block font-label-md text-on-surface mb-md">Venue</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-sm text-on-surface focus:ring-primary focus:border-primary transition-all">
+<option>All Venues</option>
+<option>Main Auditorium</option>
+<option>Senate Hall</option>
+<option>Campus Plaza</option>
+<option>Library Commons</option>
+</select>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Upcoming Events</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Discover 24 academic and campus events this month.</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-sm text-on-surface-variant">Sort by:</span>
+<select class="bg-transparent border-none font-label-md text-primary focus:ring-0 cursor-pointer">
+<option>Latest First</option>
+<option>Date (Soonest)</option>
+<option>Popularity</option>
+</select>
+</div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Event Card 1 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A professional wide-angle photograph of a modern university lecture hall with students engaged in a high-tech academic seminar. The lighting is bright and airy, reflecting a light-mode aesthetic. Soft blue and crisp white colors dominate the scene, with a focus on institutional excellence and advanced digital learning environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATYgKuYxp087KDtxGQYaFnoAu41Os-6kLgO9UwsSpjAdYS3xa_lpBl0ZHAqgCVJpEnW-O98fL1_o5w5oI5JWnmFfjxkvCjBOFtIHvFqb8ShBLO3vTqnabTX849D9W7LQ8s5exvHc4agHHRpFjgd0hEeUrDnUNjMCLSEZOiAVgl6O6eUK4hHDHmOEuwsHFud861RP49ZZsjoOZ78TFPp1iVjlFF7abY5N9nW4IddYYBgp0eWEHBTolmFyxfyeDN_VYzE2HspfMFiJ1I"/>
+<span class="absolute top-md right-md bg-primary text-on-primary font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Academic</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">The Future of AI in Higher Education</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Oct 24, 2024 • 10:00 AM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Main Auditorium, Level 2</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">JD</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">AM</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">+12</div>
+</div>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Event Card 2 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A vibrant outdoor campus plaza during a cultural festival event at a prestigious university. International flags are displayed against a backdrop of modern glass architecture. The mood is joyful and energetic with warm, natural sunlight. The color palette emphasizes clean whites, deep blues, and diverse cultural hues within a structured, modern layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB7ouvXqhMnjaY7_25YN3OtICMB7bGevhmUMwciPc77bVq-nazQ9CZKb6xqo3uuSZEAYAkw4yH9j5vxi0J5b5eh1eGR1ZhtKrtJEGIhMpEOEZrHL6KJe1Uj1xoni0w_qInCoOHDW0zpDYla-9apG-1TCerbsDgeGlZW5Ut91fQqFgSqVohNHyYpRVq7eIjo9PSgpEvhEdlsoini2TXSri6U0yECo6ONQZ6C62PJgLcbV6P4W4DLuFobqLrCEvewemm6vTreof7kOGV"/>
+<span class="absolute top-md right-md bg-secondary text-on-secondary font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Cultural</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">Annual Cultural Integration Fair 2024</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Oct 26, 2024 • 04:00 PM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Central Square Plaza</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="px-md py-xs bg-green-100 text-green-800 font-label-sm rounded-full">CONFIRMED</span>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Event Card 3 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="An interior shot of a sophisticated university science laboratory with clean white benches and state-of-the-art research equipment. Soft morning light streams through large windows, creating a sense of clarity and focus. The aesthetic is ultra-modern and clinical, featuring a palette of whites, cool grays, and institutional blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGcmKcvTGOfsPC8hkf58VPhwY55KoiErOhQHs9EXGticIaxq409SgE1bewYxeUTxTpzKWibyRJuWy_O7vPCdMALSxjrA5uXCdWNzcDgEz4ZK_6FIF1D32uMuL9DTiHK-90t3g9PWzib3B1cko6bCgyZC_F9aBG_cfu6MTqm42_wRZp_E8Uwz6eYAEYvIm34fkhzwaBWLMoDu0rs3B8Rz_vJNvoPYxT-_4H0PTEBEkei2kLNboqL-1OmrjwTickVQ_uZypMZHZH0zee"/>
+<span class="absolute top-md right-md bg-tertiary-container text-on-tertiary-container font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Research</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">Bio-Tech Innovation Symposium</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Oct 28, 2024 • 09:00 AM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Senate Research Hall</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="px-md py-xs bg-orange-100 text-orange-800 font-label-sm rounded-full">PENDING</span>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Event Card 4 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A minimalist university basketball court with sleek wooden floors and high-quality sports equipment. The space is captured in a wide shot with soft overhead stadium lighting. The atmosphere is professional and disciplined. A clean color scheme of white, natural wood tones, and university blue highlights the modern sporting facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVK50ejh67lxCz66O2rf0nnnqE3D3Z2K9uHBHazFoSHbHzIjHDsOuM2E6S5gXzrBC8CUnN0XjcGFeoZngOe3HCunDUfBaiBOUombzUbddwlLTXTrijo5I2EbJZvKNYmiFQG3Nu_NX3jNIIG6qZDE8HBXutOuKuClLCxl42FUZw_FLFkGgW60X4BI755pQ29wRSXX5Iw4cQlrkJzrCI2rjbzRKW1hu0H0hI3MPFBlTre69iB8ASKB4yVshlZdoO5c4mts0AWhQZHjkc"/>
+<span class="absolute top-md right-md bg-secondary-container text-on-secondary-container font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Sports</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">Inter-Departmental Basketball Finals</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Nov 01, 2024 • 06:00 PM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Campus Athletic Center</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="px-md py-xs bg-green-100 text-green-800 font-label-sm rounded-full">CONFIRMED</span>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Event Card 5 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A modern university library with floating white shelves, ergonomic seating, and large windows overlooking a green campus. The lighting is soft and contemplative, perfect for study and academic discussion. The design uses a sophisticated palette of whites and light blues, reflecting a calm, institutional authority and modern educational standard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGWPfaDLDTKeBck5j6PfTf2glIyRYjlVFfWFt3_ihpke2acvI3EhudJ9IM_lM70kIx6deE8xJWMyfFRk18faZ36SQg-6nkkGEBqSVufKuozxv-DiU2qm4da8VtxLqgtq2lvBEA8ZJr7AeWSXVf_j-9PcBxoqC4HHv6HVN2VkZlxHyxdxVkDoa0k3DyGH-A3WnVAFd_cVBcE6vXdwlA65_CLSyRbP0tF03WEnINuVwUHBgwtkXInApP8-T_CZM6xqw6heWxELVbcEGv"/>
+<span class="absolute top-md right-md bg-primary-container text-on-primary-container font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Workshop</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">Research Paper Writing Workshop</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Nov 03, 2024 • 02:00 PM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Library Learning Lab</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="px-md py-xs bg-red-100 text-red-800 font-label-sm rounded-full">CANCELLED</span>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Event Card 6 -->
+<article class="event-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="A high-end university career networking event in a sleek, glass-walled conference room. Professionals and students are engaging in conversations. High-key lighting highlights the polished surfaces and professional attire. The aesthetic is clean and corporate, using a palette of white, navy blue, and subtle grays to convey success and ambition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0I354H1l5UJPZULK1k0ZvQPclUggA1WObepbFWuSzsFzFbgEVB1Xnj01IXU5Aj7ybjpxHaGWY_F2cn8_1PWH3Xh2NsKejT7y8mwPsurzG5dKmBmRhyFbQRxGdAtUSnm19F11Ln6F9vS3hErKC7NjGsHER_SjWIE1IMTKztYwTMgL9-Qh9q3FjRZGgJ9iQot9-sJUR9NhMDbYyyGy9t6NJNzKc1VIYj1t8clqFfQeXO8y1wt9QhZfv9rK73NBvb7oWmU1EksnXNju_"/>
+<span class="absolute top-md right-md bg-primary text-on-primary font-label-sm px-md py-xs rounded-full uppercase tracking-wider">Career</span>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md line-clamp-2">Tech Career Networking Evening</h3>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body-sm">Nov 05, 2024 • 05:30 PM</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body-sm">Career Center Hub</span>
+</div>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant flex justify-between items-center">
+<span class="px-md py-xs bg-green-100 text-green-800 font-label-sm rounded-full">CONFIRMED</span>
+<button class="text-primary font-label-md flex items-center gap-xs group hover:gap-sm transition-all">
+                                View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-3xl flex justify-center items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container-high transition-all">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container-high transition-all">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-lg border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container-high transition-all">8</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline mt-3xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl max-w-container-max mx-auto">
+<div class="flex flex-col gap-sm mb-md md:mb-0">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">University of Central Asia</span>
+<span class="font-body-sm text-on-surface dark:text-on-surface-variant">© 2024 University of Central Asia. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Campus Directory</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interaction for filter chips
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const label = this.nextElementSibling;
+                if(this.checked) {
+                    label.classList.add('text-primary', 'font-semibold');
+                } else {
+                    label.classList.remove('text-primary', 'font-semibold');
+                }
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput?.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-4', 'ring-primary/10');
+        });
+        searchInput?.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-4', 'ring-primary/10');
+        });
+    </script>
+</body></html>

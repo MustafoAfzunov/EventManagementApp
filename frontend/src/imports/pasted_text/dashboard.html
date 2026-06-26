@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UCA Event Portal | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-indicator {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+            color: #081b38;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f3ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c2c6d4;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e0e8ff",
+                      "secondary-fixed": "#d3e4ff",
+                      "on-primary-fixed-variant": "#004491",
+                      "on-secondary-fixed-variant": "#004881",
+                      "on-surface": "#081b38",
+                      "inverse-primary": "#acc7ff",
+                      "surface-container-highest": "#d7e2ff",
+                      "primary-container": "#0056b3",
+                      "surface-dim": "#cadaff",
+                      "inverse-on-surface": "#edf0ff",
+                      "primary-fixed-dim": "#acc7ff",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#1f304f",
+                      "outline-variant": "#c2c6d4",
+                      "surface-container": "#e8edff",
+                      "secondary": "#0060a8",
+                      "primary-fixed": "#d7e2ff",
+                      "on-tertiary-fixed": "#131d24",
+                      "surface-tint": "#115cb9",
+                      "on-primary-container": "#bbd0ff",
+                      "tertiary-container": "#505a63",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#a2c9ff",
+                      "primary": "#003f87",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#003663",
+                      "on-surface-variant": "#424752",
+                      "tertiary": "#39434b",
+                      "surface-container-low": "#f1f3ff",
+                      "surface-bright": "#f9f9ff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#001a40",
+                      "tertiary-fixed": "#dae4ee",
+                      "surface": "#f9f9ff",
+                      "background": "#f9f9ff",
+                      "secondary-container": "#47a1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#081b38",
+                      "tertiary-fixed-dim": "#bec8d2",
+                      "on-tertiary-container": "#c7d1dc",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#d7e2ff",
+                      "on-secondary-fixed": "#001c38",
+                      "outline": "#727784",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#3e4851"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.4rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "gutter": "24px",
+                      "md": "16px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "container-max": "1280px",
+                      "xl": "32px",
+                      "base": "8px",
+                      "sm": "8px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Hanken Grotesk"],
+                      "body-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "headline-sm": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "headline-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface">
+<!-- Sidebar Navigation Shell -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed top-0 left-0 bg-surface border-r border-outline-variant py-lg z-40">
+<!-- Brand Header -->
+<div class="px-lg mb-xl">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Event Portal</h2>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">Management System</p>
+</div>
+</div>
+</div>
+<!-- Main Tabs -->
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="bg-secondary-container/10 text-primary font-bold border-r-4 border-primary flex items-center px-lg py-3 gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined active-nav-indicator" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_upcoming">event_upcoming</span>
+<span class="font-label-md text-label-md">My Events</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_reg">how_to_reg</span>
+<span class="font-label-md text-label-md">Registrations</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_account_box">settings_account_box</span>
+<span class="font-label-md text-label-md">Account Settings</span>
+</a>
+</nav>
+<!-- CTA Action -->
+<div class="px-lg my-lg">
+<button class="w-full bg-primary-container text-on-primary py-3 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Create New Event
+            </button>
+</div>
+<!-- Footer Tabs -->
+<div class="mt-auto border-t border-outline-variant pt-lg">
+<a class="text-on-surface-variant hover:bg-surface-container-high px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="text-error hover:bg-error-container/10 px-lg py-3 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen pb-2xl">
+<!-- Top App Bar -->
+<header class="sticky top-0 bg-surface/80 backdrop-blur-md z-30 border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg py-md flex justify-between items-center">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">University of Central Asia</h1>
+<div class="flex items-center gap-md">
+<div class="hidden sm:flex items-center bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-48" placeholder="Search events..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young university student wearing a navy blue blazer, looking confident and smiling. The background is a soft-focus university library with warm lighting, maintaining the prestigious academic aesthetic of the University of Central Asia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9yUXdwSe0PKt9WFpE74NlvkV6g8HxjVLjGUaBcWnxXyux7TQLWnt3Pnv9Ny0fK0d_CJENm7jIzwqUpXSah4sDT-KC3C1xTvmBjW6YGOxdbela-jv8tJ3aA_37xg6A1Ca0gw4zJ01_DET8rbGRsIeV8xVsT9Msod442C4MqURAs2eta1rE0WJ9rMKNmxl3GlNheyJPubebllJJTHbpAhPIVoDU23vIblTH6IoqjeedNFAy1AEV-BBVVBC8H4aa9MUSfCD4yE9x70a5"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="max-w-container-max mx-auto px-lg pt-xl">
+<!-- Greeting -->
+<section class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Welcome back, Student!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Here's what's happening across the campus today.</p>
+</section>
+<!-- Stat Cards -->
+<section class="bento-grid mb-2xl">
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-lg" data-icon="event">event</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">+12%</span>
+</div>
+<div class="mt-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Total Events</p>
+<h3 class="font-display-lg text-display-lg text-primary">24</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-2 rounded-lg" data-icon="check_circle">check_circle</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">85% Rate</span>
+</div>
+<div class="mt-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Attended</p>
+<h3 class="font-display-lg text-display-lg text-secondary">18</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed p-2 rounded-lg" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Next: 2h</span>
+</div>
+<div class="mt-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Upcoming</p>
+<h3 class="font-display-lg text-display-lg text-tertiary">04</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container bg-surface-container-high p-2 rounded-lg" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-primary font-label-sm text-label-sm">New!</span>
+</div>
+<div class="mt-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Certificates</p>
+<h3 class="font-display-lg text-display-lg text-primary-container">07</h3>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-2xl">
+<!-- Recommended Events -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recommended Events</h3>
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">View All</a>
+</div>
+<div class="flex gap-md overflow-x-auto pb-4 custom-scrollbar">
+<!-- Event Card 1 -->
+<div class="min-w-[320px] bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, modern technology symposium scene with university students interacting with interactive displays and networking. The environment is a sleek, glass-walled campus building at the University of Central Asia during golden hour. Soft architectural lighting and a palette of navy and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDioOaj2GN8o-WJ06J_7oXthWsJwht6DbMLmumcpHNhi_Qx8NZ_NX-9xnotvNaC5Q08XgMDtqG9CLsuvvQHF6isR_Z863XK4uovfESKQIzGIJgft3SzEaoL-nz_4Nc00aKZtoV6Xu2ybOxBTGupyG9T2ly-Ty6k1gdS339kkdrNDVJQTRWsP2LmBXivUXzmUtc1FsGull5yx8WuF1vhjSoDOu7NKOnJK9WTVdMzKc7DPel0ZTbxkqfuusDwQAvp_UdSaJrzmlVSZPVg"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+<span class="text-primary font-label-sm text-label-sm">Technology</span>
+</div>
+</div>
+<div class="p-lg">
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-primary transition-colors">Global Tech Symposium 2024</h4>
+<div class="flex items-center gap-4 text-on-surface-variant mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-body-sm font-body-sm">Oct 24</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-body-sm font-body-sm">Main Hall</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary py-2 rounded-lg font-label-md text-label-md hover:bg-primary-fixed transition-colors">Register Now</button>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="min-w-[320px] bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden group hover:shadow-lg transition-all duration-300">
+<div class="h-40 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An outdoor campus leadership workshop at the University of Central Asia. Diverse students are engaged in team-building exercises on a lush green lawn surrounded by modern mountain architecture. The lighting is bright and natural, conveying a sense of growth and community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBjme_3oddPVgqEIf7lFO8CLhSZhOeG21JTzZ0MXhNmQrc-KpaJFqFXrmNrewRSEj6YyPMFz0sCvU0U0jnZqHGUYfUTVrYwThsGmNCjZsNJL-XfFcB71tAG14Qc7vdg3yggrUZDoLKQZdDn1CZynXEWK8qS1d-el6jzeuH82NWYQWwLbIITB7Kgji8pBiH_HjD27soVoAJShj3x8edqVwsT9NUpBgoiR32LQgdwLzagzeLHPZq6O9ke5t-7iw_97DnNTmg6JSTOpC2"/>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+<span class="text-secondary font-label-sm text-label-sm">Leadership</span>
+</div>
+</div>
+<div class="p-lg">
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-secondary transition-colors">Student Leadership Forum</h4>
+<div class="flex items-center gap-4 text-on-surface-variant mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-body-sm font-body-sm">Oct 28</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-body-sm font-body-sm">Campus Garden</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary py-2 rounded-lg font-label-md text-label-md hover:bg-primary-fixed transition-colors">Register Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notifications Section -->
+<div>
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Notifications</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<div class="space-y-md">
+<!-- Notification Item 1 -->
+<div class="flex gap-md p-md bg-white border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-700" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><strong>Registration confirmed</strong> for Tech Symposium 2024</p>
+<span class="text-[11px] text-on-surface-variant uppercase font-bold mt-1 block">2 hours ago</span>
+</div>
+</div>
+<!-- Notification Item 2 -->
+<div class="flex gap-md p-md bg-white border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-700" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><strong>Feedback requested:</strong> How was the Career Fair?</p>
+<span class="text-[11px] text-on-surface-variant uppercase font-bold mt-1 block">Yesterday</span>
+</div>
+</div>
+<!-- Notification Item 3 -->
+<div class="flex gap-md p-md bg-white border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-700" data-icon="info">info</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">New event <strong>"Cultural Night"</strong> added to campus calendar</p>
+<span class="text-[11px] text-on-surface-variant uppercase font-bold mt-1 block">2 days ago</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg text-on-surface-variant font-label-md text-label-md py-2 border border-dashed border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+                        View All Notifications
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="md:ml-64 bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl max-w-container-max mx-auto gap-lg">
+<div class="flex flex-col md:flex-row items-center gap-md">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">UCA</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 University of Central Asia. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Campus Directory</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex justify-around py-3 px-2 z-50">
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Dash</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[10px]">Events</span>
+</a>
+<div class="-mt-8">
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="text-[10px]">Alerts</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px]">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for hover effects on stat cards
+        document.querySelectorAll('.bento-grid > div').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body></html>

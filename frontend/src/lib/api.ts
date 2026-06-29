@@ -618,6 +618,22 @@ export const adminRegistrations = {
     post<void>(`/api/admin/registrations/${id}/reject`, { reason }),
 };
 
+// ─── Admin users ──────────────────────────────────────────────────────────────
+export interface AdminUser {
+  id: string;
+  fullName: string;
+  email: string;
+  role: string;
+  createdAt: string;
+}
+
+export const adminUsers = {
+  list: () => get<AdminUser[]>('/api/users'),
+  create: (data: { email: string; firstName: string; lastName: string; password: string; role: string }) =>
+    post<AdminUser>('/api/users', data),
+  delete: (id: string) => del<void>(`/api/users/${id}`),
+};
+
 export const adminVenues = {
   list: async (): Promise<Venue[]> => {
     const vs = await get<{ id: string; name: string; address: string; city: string; country: string; seatCount: number; eventCount: number }[]>('/api/admin/venues');

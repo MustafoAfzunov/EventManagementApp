@@ -30,6 +30,7 @@ const staffNav: NavItem[] = [
 const adminNav: NavItem[] = [
   { icon: 'event', label: 'Events', to: '/admin/events' },
   { icon: 'location_on', label: 'Venues', to: '/admin/venues' },
+  { icon: 'group', label: 'Users', to: '/admin/users' },
   { icon: 'bar_chart', label: 'Reports', to: '/admin/reports' },
 ];
 

@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { toast } from 'sonner';
 import { checkIn, events as eventsApi, type CheckInResult, type CheckInStats } from '../../lib/api';
+import QrScanner from '../../components/checkin/QrScanner';
 import { c } from '../../lib/theme';
 
 const resultConfig: Record<string, { bg: string; text: string; icon: string; label: string }> = {
@@ -45,11 +46,15 @@ export default function CheckInPage() {
 
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!code.trim()) return;
+    await processScan(code.trim());
+  };
+
+  const processScan = useCallback(async (rawCode: string) => {
+    if (!rawCode) return;
     setScanning(true);
     setResult(null);
     try {
-      const res = await checkIn.scan(code.trim(), eventId || undefined);
+      const res = await checkIn.scan(rawCode, eventId || undefined);
       setResult(res);
       if (res.status === 'CheckedIn') {
         setAttendees((prev) => [{ name: res.attendeeName ?? 'Guest', seat: res.seatLabel, time: new Date().toLocaleTimeString() }, ...prev]);
@@ -65,7 +70,7 @@ export default function CheckInPage() {
       setCode('');
       setTimeout(() => inputRef.current?.focus(), 100);
     }
-  };
+  }, [eventId]);
 
   const cfg = result ? (resultConfig[result.status] ?? fallbackCfg) : null;
 
@@ -96,17 +101,9 @@ export default function CheckInPage() {
             <div className="border rounded-xl p-6" style={{ background: c.surfaceLowest, borderColor: c.outlineVariant }}>
               <h3 className="font-semibold text-lg mb-4" style={{ fontFamily: 'Hanken Grotesk', color: c.onSurface }}>Scan or Enter Code</h3>
 
-              {/* Simulated QR Scanner area */}
-              <div className="w-full h-48 rounded-xl border-2 border-dashed flex flex-col items-center justify-center mb-6 relative overflow-hidden" style={{ borderColor: c.outlineVariant, background: c.surfaceLow }}>
-                <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                  <span className="material-symbols-outlined text-[120px]" style={{ color: c.primary }}>qr_code_scanner</span>
-                </div>
-                <span className="material-symbols-outlined text-[48px] relative z-10 mb-2" style={{ color: c.primaryContainer }}>qr_code_scanner</span>
-                <p className="text-sm relative z-10" style={{ color: c.onSurfaceVariant, fontFamily: 'Inter' }}>Position QR code in the camera view</p>
-                <p className="text-xs mt-1 relative z-10" style={{ color: c.outline, fontFamily: 'Inter' }}>Camera integration requires hardware access</p>
-              </div>
+              <QrScanner onScan={(scanned) => void processScan(scanned)} paused={scanning} />
 
-              <form onSubmit={handleScan} className="flex gap-3">
+              <form onSubmit={handleScan} className="flex gap-3 mt-6">
                 <div className="relative flex-1">
                   <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2" style={{ color: c.onSurfaceVariant }}>key</span>
                   <input

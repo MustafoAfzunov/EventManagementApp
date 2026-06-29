@@ -1,5 +1,6 @@
 using EventManagementApp.Application.Common;
 using EventManagementApp.Domain.Entities;
+using EventManagementApp.Domain.Enums;
 
 namespace EventManagementApp.Application.Interfaces.Repositories;
 
@@ -12,6 +13,8 @@ public interface IUserRepository
     Task<bool> EmailExistsAsync(string email, CancellationToken cancellationToken = default);
     Task<bool> FullNameExistsAsync(string firstName, string lastName, Guid? excludeUserId = null, CancellationToken cancellationToken = default);
     Task<IReadOnlyList<User>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<int> CountByRoleAsync(UserRole role, CancellationToken cancellationToken = default);
     void Add(User user);
     void Update(User user);
+    void Remove(User user);
 }

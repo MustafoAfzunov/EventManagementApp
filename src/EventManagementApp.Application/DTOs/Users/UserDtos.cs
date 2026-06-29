@@ -19,3 +19,10 @@ public record UserListItemDto(
 public record UpdateProfileRequest(string FirstName, string LastName);
 
 public record ChangePasswordRequest(string CurrentPassword, string NewPassword);
+
+public record CreateAdminUserRequest(
+    string Email,
+    string FirstName,
+    string LastName,
+    string Password,
+    string Role);

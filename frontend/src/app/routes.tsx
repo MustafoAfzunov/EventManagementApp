@@ -27,6 +27,7 @@ const CheckInPage            = lazy(() => import('../pages/staff/CheckInPage'));
 const AdminEventsPage        = lazy(() => import('../pages/admin/AdminEventsPage'));
 const AdminEventEditorPage   = lazy(() => import('../pages/admin/AdminEventEditorPage'));
 const AdminVenuesPage        = lazy(() => import('../pages/admin/AdminVenuesPage'));
+const AdminUsersPage        = lazy(() => import('../pages/admin/AdminUsersPage'));
 const AdminReportsPage       = lazy(() => import('../pages/admin/AdminReportsPage'));
 
 function PageLoader() {
@@ -153,6 +154,10 @@ export const router = createBrowserRouter([
   {
     path: '/admin/venues',
     element: <AuthProvider><WithAppLayout roles={['Admin']}><AdminVenuesPage /></WithAppLayout></AuthProvider>,
+  },
+  {
+    path: '/admin/users',
+    element: <AuthProvider><WithAppLayout roles={['Admin']}><AdminUsersPage /></WithAppLayout></AuthProvider>,
   },
   {
     path: '/admin/reports',

@@ -1,6 +1,7 @@
 using EventManagementApp.Application.Common;
 using EventManagementApp.Application.Interfaces.Repositories;
 using EventManagementApp.Domain.Entities;
+using EventManagementApp.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementApp.Infrastructure.Persistence.Repositories;
@@ -75,7 +76,14 @@ public class UserRepository : IUserRepository
             .ToListAsync(cancellationToken);
     }
 
+    public Task<int> CountByRoleAsync(UserRole role, CancellationToken cancellationToken = default)
+    {
+        return _context.Users.CountAsync(u => u.Role == role, cancellationToken);
+    }
+
     public void Add(User user) => _context.Users.Add(user);
 
     public void Update(User user) => _context.Users.Update(user);
+
+    public void Remove(User user) => _context.Users.Remove(user);
 }
